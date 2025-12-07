@@ -1,0 +1,23 @@
+{
+  "name": "marp-slides",
+  "version": "1.0.0",
+  "description": "Marpでスライドを管理するリポジトリ",
+  "main": "index.js",
+  "scripts": {
+    "build": "marp slides/*.md --html --output dist/",
+    "build:pdf": "marp slides/*.md --pdf --output dist/",
+    "build:pptx": "marp slides/*.md --pptx --output dist/",
+    "preview": "marp slides/*.md --preview",
+    "serve": "marp slides/*.md --server"
+  },
+  "keywords": [
+    "marp",
+    "slides",
+    "presentation"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@marp-team/marp-cli": "^3.4.0"
+  }
+}

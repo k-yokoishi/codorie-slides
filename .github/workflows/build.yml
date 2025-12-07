@@ -1,0 +1,39 @@
+name: Build Slides
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+    branches:
+      - main
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build HTML slides
+        run: npm run build
+
+      - name: Build PDF slides
+        run: npm run build:pdf
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: slides
+          path: dist/
