@@ -109,6 +109,18 @@ Scratchとは...
 
 宇宙人の敵と戦うシューティングゲームをつくりましょう！
 
+<style>
+iframe {
+  display: block;
+  margin: 0 auto;
+}
+</style>
+
+<iframe src="https://scratch.mit.edu/projects/1240477626/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
+
+
+[📖 Scratch体験会資料](https://www.notion.so/Scratch-2aed9bb0c43180c593ecfad9b5557493?source=copy_link)
+
 ---
 
 # おわりに

@@ -20,6 +20,23 @@ section {
   color: var(--codorie-text);
   font-family: 'Zen Maru Gothic', 'Hiragino Sans', 'Yu Gothic', 'Meiryo', sans-serif;
   padding: 80px;
+  position: relative;
+}
+
+/* 共通ロゴ（タイトルスライド以外） */
+section:not(.title)::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 120px;
+  height: 120px;
+  background-image: url('images/codorie-logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 1;
+  opacity: 0.9;
 }
 
 /* タイトルスライド */
@@ -34,15 +51,15 @@ section.title {
 
 section.title h1 {
   color: var(--codorie-green);
-  font-size: 3.5em;
+  font-size: 2.5em;
   font-weight: bold;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.3em;
   letter-spacing: 0.1em;
 }
 
 section.title h2 {
   color: var(--codorie-text);
-  font-size: 1.8em;
+  font-size: 1.5em;
   font-weight: normal;
   margin-top: 0.5em;
 }
@@ -50,32 +67,25 @@ section.title h2 {
 /* 見出し */
 h1 {
   color: var(--codorie-green);
-  font-size: 2.5em;
+  font-size: 2em;
   font-weight: bold;
-  margin-bottom: 0.8em;
+  margin-bottom: 0.4em;
   letter-spacing: 0.05em;
 }
 
 h2 {
   color: var(--codorie-green);
-  font-size: 2em;
+  font-size: 1.5em;
   font-weight: bold;
   margin-bottom: 0.6em;
   letter-spacing: 0.05em;
-}
-
-h3 {
-  color: var(--codorie-text);
-  font-size: 1.5em;
-  font-weight: bold;
-  margin-bottom: 0.5em;
 }
 
 /* テキスト */
 p {
   color: var(--codorie-text);
   font-size: 1.2em;
-  line-height: 1.8;
+  line-height: 1.5;
   margin-bottom: 0.8em;
 }
 
@@ -158,7 +168,6 @@ section.bg-green {
 
 section.bg-green h1,
 section.bg-green h2,
-section.bg-green h3,
 section.bg-green p,
 section.bg-green li {
   color: var(--codorie-white);
