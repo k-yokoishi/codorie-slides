@@ -1,0 +1,182 @@
+/* @theme codorie */
+
+@import 'default';
+
+:root {
+  /* Codorieブランドカラー */
+  --codorie-bg-main: #f5f4e8;
+  --codorie-bg-section: #f4f2c3;
+  --codorie-green: #0d945a;
+  --codorie-text: #444;
+  --codorie-text-light: #666;
+  --codorie-white: #ffffff;
+  --codorie-accent-light: #a8d8ad;
+  --codorie-accent-blue: #c0e0f0;
+  --codorie-accent-peach: #f5d0b0;
+}
+
+section {
+  background: var(--codorie-bg-main);
+  color: var(--codorie-text);
+  font-family: 'Zen Maru Gothic', 'Hiragino Sans', 'Yu Gothic', 'Meiryo', sans-serif;
+  padding: 80px;
+}
+
+/* タイトルスライド */
+section.title {
+  background: var(--codorie-bg-main);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+section.title h1 {
+  color: var(--codorie-green);
+  font-size: 3.5em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  letter-spacing: 0.1em;
+}
+
+section.title h2 {
+  color: var(--codorie-text);
+  font-size: 1.8em;
+  font-weight: normal;
+  margin-top: 0.5em;
+}
+
+/* 見出し */
+h1 {
+  color: var(--codorie-green);
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-bottom: 0.8em;
+  letter-spacing: 0.05em;
+}
+
+h2 {
+  color: var(--codorie-green);
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 0.6em;
+  letter-spacing: 0.05em;
+}
+
+h3 {
+  color: var(--codorie-text);
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+/* テキスト */
+p {
+  color: var(--codorie-text);
+  font-size: 1.2em;
+  line-height: 1.8;
+  margin-bottom: 0.8em;
+}
+
+li {
+  color: var(--codorie-text);
+  font-size: 1.1em;
+  line-height: 1.8;
+  margin-bottom: 0.5em;
+}
+
+/* 強調 */
+strong {
+  color: var(--codorie-green);
+  font-weight: bold;
+}
+
+/* コードブロック */
+code {
+  background: var(--codorie-bg-section);
+  color: var(--codorie-text);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+}
+
+pre {
+  background: var(--codorie-bg-section);
+  border-left: 4px solid var(--codorie-green);
+  padding: 1em;
+  border-radius: 4px;
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+}
+
+/* テーブル */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1em 0;
+}
+
+th {
+  background: var(--codorie-green);
+  color: var(--codorie-white);
+  padding: 0.8em;
+  text-align: left;
+  font-weight: bold;
+}
+
+td {
+  padding: 0.8em;
+  border-bottom: 1px solid var(--codorie-bg-section);
+}
+
+tr:nth-child(even) {
+  background: var(--codorie-bg-section);
+}
+
+/* 引用 */
+blockquote {
+  border-left: 4px solid var(--codorie-green);
+  padding-left: 1em;
+  margin-left: 0;
+  color: var(--codorie-text-light);
+  font-style: italic;
+}
+
+/* セクション背景のバリエーション */
+section.bg-section {
+  background: var(--codorie-bg-section);
+}
+
+section.bg-green {
+  background: var(--codorie-green);
+  color: var(--codorie-white);
+}
+
+section.bg-green h1,
+section.bg-green h2,
+section.bg-green h3,
+section.bg-green p,
+section.bg-green li {
+  color: var(--codorie-white);
+}
+
+/* ページ番号 */
+section::after {
+  color: var(--codorie-text-light);
+  font-size: 0.9em;
+}
+
+/* リンク */
+a {
+  color: var(--codorie-green);
+  text-decoration: underline;
+}
+
+a:hover {
+  color: var(--codorie-green);
+  opacity: 0.8;
+}

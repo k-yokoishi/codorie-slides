@@ -14,6 +14,33 @@ npm install
 
 `slides/`ディレクトリにMarkdownファイル（`.md`）を作成してください。
 
+#### ディレクトリ構成
+
+複数のスライド資料を管理しやすくするため、各スライドごとにディレクトリを作成する構成を推奨します：
+
+```
+slides/
+  scratch-experience/
+    index.md          # スライドのメインファイル
+    images/           # このスライド専用の画像ディレクトリ
+  another-slide/
+    index.md
+    images/
+      ...
+```
+
+この構成により、各スライドの画像を整理して管理できます。スライド内で画像を参照する際は、以下のように記述します：
+
+```markdown
+![説明](images/slide-image.png)
+```
+
+または：
+
+```markdown
+![説明](./images/slide-image.png)
+```
+
 ### スライドのプレビュー
 
 #### 推奨: VS Code拡張機能（最も主流）
