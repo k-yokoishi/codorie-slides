@@ -4,11 +4,12 @@
   "description": "Marpでスライドを管理するリポジトリ",
   "main": "index.js",
   "scripts": {
-    "build": "marp slides/**/*.md --html --theme-set themes --output dist/",
-    "build:pdf": "marp slides/**/*.md --pdf --theme-set themes --output dist/",
-    "build:pptx": "marp slides/**/*.md --pptx --theme-set themes --output dist/",
-    "preview": "marp slides/**/*.md --preview --theme-set themes",
-    "serve": "marp slides/**/*.md --server --theme-set themes"
+    "build": "marp -I slides --html --no-pdf --theme-set themes --output dist/ && npm run copy:images",
+    "build:pdf": "marp -I slides --pdf --theme-set themes --output dist/ && npm run copy:images",
+    "build:pptx": "marp -I slides --pptx --theme-set themes --output dist/ && npm run copy:images",
+    "copy:images": "node scripts/copy-images.js",
+    "preview": "marp slides/scratch-experience/index.md --preview --theme-set themes",
+    "serve": "marp -I slides --server --theme-set themes"
   },
   "keywords": [
     "marp",

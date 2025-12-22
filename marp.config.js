@@ -12,10 +12,10 @@ module.exports = {
   html: true,
 
   // PDF設定
-  pdf: true,
+  pdf: false,
 
   // PowerPoint設定
-  pptx: true,
+  pptx: false,
 
   // 許可するHTMLタグ
   allowLocalFiles: true,

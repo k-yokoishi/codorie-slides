@@ -164,3 +164,12 @@ Codorieでは今日の体験会のように、まずはScratchでゲームをつ
 # 続けてみたいなと思ったら
 
 LINEからご連絡ください！ご入会についてご案内します。
+
+<style>
+img[alt="LINE QRコード"] {
+  display: block;
+  margin: 0 auto;
+}
+</style>
+
+<img src="images/line-qr.png" width="360" height="360" alt="LINE QRコード">
