@@ -3,7 +3,7 @@ module.exports = {
   inputDir: './slides',
 
   // 出力ディレクトリ
-  output: './dist',
+  output: './docs',
 
   // テーマ設定
   themeSet: './themes',

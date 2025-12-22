@@ -5,7 +5,7 @@ yarn.lock
 
 # Build outputs
 dist/
-*.html
+# docs/ is used for GitHub Pages, so it should be committed
 *.pdf
 *.pptx
 

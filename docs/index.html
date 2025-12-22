@@ -1,49 +1,4 @@
-const fs = require('fs')
-const path = require('path')
-
-const distDir = path.join(__dirname, '..', 'docs')
-const slidesDir = path.join(__dirname, '..', 'slides')
-
-// スライド情報を取得
-function getSlides() {
-  const slides = []
-  const entries = fs.readdirSync(slidesDir, { withFileTypes: true })
-
-  entries.forEach((entry) => {
-    if (entry.isDirectory()) {
-      const slidePath = path.join(slidesDir, entry.name, 'index.md')
-      if (fs.existsSync(slidePath)) {
-        // index.mdからタイトルを取得
-        const content = fs.readFileSync(slidePath, 'utf-8')
-        const titleMatch = content.match(/^#\s+(.+)$/m)
-        const title = titleMatch ? titleMatch[1] : entry.name
-        slides.push({
-          name: entry.name,
-          title: title,
-          path: `${entry.name}/index.html`,
-        })
-      }
-    } else if (entry.name.endsWith('.md')) {
-      const slidePath = path.join(slidesDir, entry.name)
-      const content = fs.readFileSync(slidePath, 'utf-8')
-      const titleMatch = content.match(/^#\s+(.+)$/m)
-      const title = titleMatch ? titleMatch[1] : entry.name.replace('.md', '')
-      slides.push({
-        name: entry.name.replace('.md', ''),
-        title: title,
-        path: `${entry.name.replace('.md', '')}.html`,
-      })
-    }
-  })
-
-  return slides
-}
-
-// index.htmlを生成
-function generateIndex() {
-  const slides = getSlides()
-
-  const html = `<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
@@ -162,14 +117,10 @@ function generateIndex() {
     </header>
 
     <div class="slides-grid">
-${slides
-  .map(
-    (slide) => `      <a href="${slide.path}" class="slide-card">
-        <h2>${slide.title}</h2>
+      <a href="scratch-workshop/index.html" class="slide-card">
+        <h2>Scratchプログラミング体験会</h2>
         <p>スライドを表示</p>
-      </a>`
-  )
-  .join('\n')}
+      </a>
     </div>
 
     <footer>
@@ -177,14 +128,4 @@ ${slides
     </footer>
   </div>
 </body>
-</html>`
-
-  fs.writeFileSync(path.join(distDir, 'index.html'), html, 'utf-8')
-  console.log('Generated index.html')
-  console.log(`Found ${slides.length} slide(s):`)
-  slides.forEach((slide) => {
-    console.log(`  - ${slide.title} (${slide.path})`)
-  })
-}
-
-generateIndex()
+</html>

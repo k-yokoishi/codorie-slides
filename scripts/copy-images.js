@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const slidesDir = path.join(__dirname, '..', 'slides');
-const distDir = path.join(__dirname, '..', 'dist');
+const distDir = path.join(__dirname, '..', 'docs');
 
 // slidesディレクトリ内の各スライドディレクトリを確認
 function copyImages() {
@@ -28,7 +28,7 @@ function copyImages() {
         }
 
         fs.cpSync(slideImagesDir, distImagesDir, { recursive: true });
-        console.log(`Copied images from ${slide.name}/images to dist/${slide.name}/images`);
+        console.log(`Copied images from ${slide.name}/images to docs/${slide.name}/images`);
       }
     }
   });
