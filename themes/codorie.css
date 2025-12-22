@@ -21,6 +21,15 @@ section {
   font-family: 'Yu Gothic', '游ゴシック', 'Century Gothic', 'Hiragino Sans', 'Meiryo', sans-serif;
   padding: 80px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* h1だけのページ（h1の後に要素がない）は中央配置 */
+section:has(> h1:only-child),
+section:has(> h1:last-child:not(:first-child)) {
+  justify-content: center;
 }
 
 /* 共通ロゴ（タイトルスライド以外） */
